@@ -15,10 +15,8 @@ title: Index
 
 <div>
     <p>Latest Trend:</p>
-    {% for post in site.trends %}
-    <span class="post-abstract">{{ post.content | strip_html | truncate:400 }}</span>
+    <embed type="plain" height="200" width="100%" src="trend.html" class="trend-abstract" />
     <a href="trend.html">更多动态→</a></p>
-    {% endfor %}
 </div>
 
 <div>
