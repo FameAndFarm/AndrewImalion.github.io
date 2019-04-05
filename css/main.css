@@ -62,3 +62,10 @@ code {
     width: 75%; 
     height: auto;
 }
+
+/* For Latin */
+
+.praesens{
+    width: 100%;
+    background-color: #a0a0a0;
+}
