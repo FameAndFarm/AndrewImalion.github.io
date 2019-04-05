@@ -53,3 +53,12 @@ code {
     background-color: #dcdcdc;
     font-family: 'Courier New ', 'Lucida Console', 'Monospace';
 }
+
+code .highlight {
+    border-radius: 15px; 
+    border: 2px solid #888888;
+    background-color: #dcdcdc;
+    margin: 10px;
+    padding: 5px; 
+    width: 75%; 
+    height: auto;
