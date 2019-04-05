@@ -15,8 +15,8 @@ title: Index
 
 <div>
     <p>Latest Trend:</p>
-    {% if trend.html in site.url %}
-    <span class="trend-abstract">{{ trend.html.content | strip_html | truncate:400 }}</span>
+    {% if trend in site %}
+    <span class="trend-abstract">{{ trend.content | strip_html | truncate:400 }}</span>
     {% endif %}
     <a href="trend.html">更多动态→</a></p>
 </div>
