@@ -15,9 +15,9 @@ title: Index
 
 <div>
     <p>Latest Trend:</p>
-    <% for trend in site %>
-    <span class="trend-abstract">{{ trend.content | strip_html | truncate:400 }}</span>
-    <% endfor %>
+    {% for trend.html in site.url %}
+    <span class="trend-abstract">{{ trend.html.content | strip_html | truncate:400 }}</span>
+    {% endfor %}
     <a href="trend.html">更多动态→</a></p>
 </div>
 
