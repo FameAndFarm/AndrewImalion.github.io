@@ -30,6 +30,6 @@ ul.posts li { list-style: none; }
 
 /* My Css*/
 .post-abstract {
-    font-size: 0.6em;
-    color: dimgray;
+    font-size: 0.5em;
+    color: #888888;
 }
