@@ -15,10 +15,9 @@ title: Index
 
 <div>
     <p>Latest Trend:</p>
-    <% assign page = trend.html %}
-    <% if page = trend.html %>
-    <span class="trend-abstract">{{ page.content | strip_html | truncate:400 }}</span>
-    <% endif %>
+    <% for trend in site %>
+    <span class="trend-abstract">{{ trend.content | strip_html | truncate:400 }}</span>
+    <% endfor %>
     <a href="trend.html">更多动态→</a></p>
 </div>
 
