@@ -3,7 +3,7 @@ body { margin: 60px auto; width: 70%; }
 a { text-decoration: none; color: #999; }
 a:hover { text-decoration: underline; }
 
-p, ul { font-size: 1.5em; line-height: 1.4em; color: #333; }
+p, ul { font-family:'Times New Roman',Times, serif;font-size: 1.5em; line-height: 1.4em; color: #333; }
 
 h1, h2, h3, h4 { font-family: 'Helvetica', 'Arial', 'Sans-Serif'; }
 h1 { font-size: 3em;  }
@@ -31,6 +31,6 @@ ul.posts li { list-style: none; }
 /* My Css*/
 .post-abstract {
     line-height:50%;
-    font-size: 0.5em;
+    font-size: 0.6em;
     color: #888888;
 }
