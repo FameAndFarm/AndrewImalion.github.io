@@ -21,7 +21,7 @@ description: 海纳百川，有容乃大
 <!-- Main Content -->
 <div class="container">
 	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+		<div>
             <!-- 标签云 -->
 			<div id='tag_cloud' class="tags">
 				{% for tag in site.tags %}
@@ -48,13 +48,13 @@ description: 海纳百川，有容乃大
 				  </li> -->
 				 <div class="post-preview">
 				    <a href="{{ post.url | prepend: site.baseurl }}">
-				        <h2 class="post-title">
+				        <h4 class="post-title">
                             {{ post.title }}
-				        </h2>
+				        </h4>
 				        {% if post.subtitle %}
-				        <h3 class="post-subtitle">
+				        <i class="post-subtitle">
 				            {{ post.subtitle }}
-				        </h3>
+				        </i>
 				        {% endif %}
 				    </a>
 				    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
