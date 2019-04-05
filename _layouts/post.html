@@ -1,8 +1,7 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-<p class="meta">{{ page.date | date_to_string }}</p>
+
 
 <div class="post-heading">
                     <div class="tags">
@@ -17,7 +16,7 @@ layout: default
                     {% comment %} if page.subtitle {% endcomment %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% comment %} endif {% endcomment %}
-                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+                    <span class="meta">Posted by <i>{% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}</i> on {{ page.date | date_to_string }}</span>
                 </div>
 
 <div class="post">
