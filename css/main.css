@@ -67,5 +67,15 @@ code {
 
 .praesens{
     width: 100%;
-    background-color: #a0a0a0;
+    background-color: #e0e0e0;
+}
+
+.imperf{
+    width: 100%;
+    background-color: #99ccff;
+}
+
+.futurum{
+    width: 100%;
+    background-color: #ff6633;
 }
