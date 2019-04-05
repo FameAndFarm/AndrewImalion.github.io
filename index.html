@@ -22,7 +22,7 @@ title: Index
         {% for post in site.posts %}
         <li>
             <a href="{{ post.url }}">{{ post.title }}</a><br/>
-            <span class="post-abstract">{{ post.content | strip_html | truncate:200 }}</span>
+            <span class="post-abstract">{{ post.content | strip_html | truncate:400 }}</span>
         </li>
         {% endfor %}
     </ul>
