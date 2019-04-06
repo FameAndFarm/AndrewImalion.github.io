@@ -3,7 +3,7 @@ body { margin: 60px auto; width: 70%; }
 a { text-decoration: none; color: #999; }
 a:hover { text-decoration: underline; }
 
-p, ul { font-family:'Times New Roman',Times, serif;font-size: 1.5em; line-height: 1.4em; color: #333; }
+p, ul { font-family:'Times New Roman','Times', serif;font-size: 1.5em; line-height: 1.4em; color: #333; }
 
 h1, h2, h3, h4 { font-family: 'Helvetica', 'Arial', 'Sans-Serif'; }
 h1 { font-size: 3em;  }
@@ -29,6 +29,13 @@ ul.posts li { list-style: none; }
 .cv .download { float: right; font-size: .8em; text-transform: uppercase; }
 
 /* My Css*/
+.authorline {
+    font-family:'Times New Roman','Times', serif;
+    font-size: 1.2em;
+    font-style: italic;
+    float: right;
+}
+    
 .post-abstract {
     line-height:50%;
     font-size: 0.6em;
@@ -38,7 +45,7 @@ ul.posts li { list-style: none; }
 .tag {
     border-radius: 15px; 
     border: 2px solid #888888;
-    margin: 0px 10px 0px 0px;
+    margin: 0px 10px 10px 0px;
     padding: 5px; 
     width: auto; 
     height: 80px; 
@@ -47,6 +54,13 @@ ul.posts li { list-style: none; }
 .subheading{
     font-size: 1.5em;
     font-style: italic;
+}
+
+.desheading {
+    font-family:'Times New Roman','Times', serif;
+    font-size: 0.75em;
+    font-style: italic;
+    float: center;
 }
 
 code {
