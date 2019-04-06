@@ -79,3 +79,18 @@ code {
     width: 100%;
     background-color: #ff6633;
 }
+
+/* Trends */
+
+.trend-shorcut{
+    font-family: 'Helvetica', 'Arial', 'Sans-Serif';
+    border-radius: 15px;
+    border: 2px solid #383838;
+    background-color: #dcdcdc;
+    margin: 10px;
+    padding: 5px; 
+    width: 75%; 
+    height: auto;
+}
+
+
