@@ -1,7 +1,8 @@
 ---
 layout: default
 title: INDEX
-description: 伯伦大人  GreatBaron
+subtitle: 伯伦大人  GreatBaron
+description: Powered by GitHub
 ---
 
 <div class="blurb">
@@ -17,7 +18,7 @@ description: 伯伦大人  GreatBaron
 <div class="trend-shortcut">
     <h2>Latest Trend:</h2>
     {% for my_trends in site.my_trends %}
-    <span>{{ my_trends.content | strip_html | truncate:300}}</span>
+    <span class="trend-shortcut" >{{ my_trends.content | strip_html | truncate:300}}</span>
     {% endfor %}
     <a href="/trend.html" >更多动态</a></p>
 </div>
