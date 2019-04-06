@@ -1,0 +1,302 @@
+---
+title: 概率学小工具
+subtitle: Dice,Coin and else
+description: 谋事在人，成事在天。
+layout: nonav
+permalink: /litools.html
+---
+
+<!DOCTYPE html>
+<!-- copyright GreatBaron,2019. All Rights Reserved -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        .screen {
+            border-radius: 25px;
+            background: #666666;
+            padding: 20px;
+            width: 33%;
+            color: #ffffff;
+            text-align: center;
+            font-family: Consolas, Courier, monospace;
+            font-size: xx-large;
+            position: relative;
+            left: 25%;
+        }
+
+        .litool {
+            width: 250px;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .politic {
+
+        }
+
+        .polD1 {
+            /*极端自由主义*/
+            background-color: #000099;
+            color: #ffffff;
+            font-family: Consolas, Courier, monospace;
+        }
+        .polD2 {
+            /*偏向自由主义*/
+            background-color: #33ccff;
+            color: #ffffff;
+            font-family: Consolas, Courier, monospace;
+        }
+        .polD3 {
+            /*中庸主义*/
+            background-color: #999999;
+            color: #ffffff;
+            font-family: Consolas, Courier, monospace;
+        }
+        .polD4 {
+            /*偏向进步主义*/
+            background-color: #ff9999;
+            color: #ffffff;
+            font-family: Consolas, Courier, monospace;
+        }
+        .polD5 {
+            /*极端进步主义*/
+            background-color: #cc0000;
+            color: #ffffff;
+            font-family: Consolas, Courier, monospace;
+        }
+
+        /*按钮*/
+        .mybut {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .butgreen {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+        .butgreen:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .butred {
+            background-color: white;
+            color: black;
+            border: 2px solid #f44336;
+        }
+        .butred:hover {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .butblack {
+            background-color: white;
+            color: black;
+            border: 2px solid #555555;
+        }
+        .butblack:hover {
+            background-color: #555555;
+            color: white;
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- 计数器 -->
+    <div class="litool">
+        <hr />
+        <h3>计数器</h3>
+        <button onclick="counterSet0()">清零</button>
+        <p id="counter" class="screen">0</p>
+        <input type="text" id="cAmpl" value="1" /><br />
+        <button onclick="counterPlus()" class="mybut butgreen">+</button>
+        <button onclick="counterMinus()" class="mybut butred">-</button>
+
+        <audio id="cSoundP" style="display:none;"><source src="Hint.wav" type="audio/wav" /></audio>
+        <audio id="cSoundM" style="display:none;"><source src="Warning.wav" type="audio/wav" /></audio>
+    </div>
+
+    <div class="litool">
+        <hr />
+        <h3>随机数</h3>
+        <p id="rand" class="screen">？</p>
+        <input type="text" id="rLim1" value="1" />
+        <input type="text" id="rLim2" value="6" />
+        <button onclick="getRandHook()" class="mybut butblack">GET</button>
+    </div>
+
+    <div class="litool">
+        <hr />
+        <h3>6面骰子</h3>
+        <p id="dice6">？</p>
+        <button onclick="get6Dice()" class="mybut butred">GET</button>
+    </div>
+
+    <div class="litool">
+        <hr />
+        <h3>硬币</h3>
+        <p id="coin">？</p>
+        <button onclick="getCoin()" class="mybut butgreen">GET</button>
+        <audio id="coinSound" style="display:none;"><source src="ReceiveGold.wav" type="audio/wav"/></audio>
+    </div>
+
+    <div class="litool">
+        <hr />
+        <h3>一次生成10政治光谱</h3>
+        <table id="poliTable" border="1" class="politic">
+            <tr><th>FaF</th><th>虚拟经济</th><th>市场开放</th><th>环境保护</th><th>政府职权</th></tr>
+
+            <tr id="poline1"></tr>
+            <tr id="poline2"></tr>
+            <tr id="poline3"></tr>
+            <tr id="poline4"></tr>
+            <tr id="poline5"></tr>
+            <tr id="poline6"></tr>
+            <tr id="poline7"></tr>
+            <tr id="poline8"></tr>
+            <tr id="poline9"></tr>
+            <tr id="poline10"></tr>
+
+        </table>
+        <button onclick="getPoli()" class="mybut butblack">GET</button>
+        <audio id="poliSound" style="display:none;"><source src="Invi.wav" type="audio/wav" /></audio>
+    </div>
+
+    <script>
+
+        //计数器
+        var counter = 0;
+        function counterPlus() {
+            var cAmpl = document.getElementById("cAmpl").value;
+            counter += Number(cAmpl);
+            document.getElementById("counter").innerHTML = counter;
+            var sound = document.getElementById("cSoundP");
+            sound.play();
+        }
+        function counterMinus() {
+            var cAmpl = document.getElementById("cAmpl").value;
+            counter -= Number(cAmpl);
+            document.getElementById("counter").innerHTML = counter;
+            var sound = document.getElementById("cSoundM");
+            sound.play();
+        }
+        function counterSet0() {
+            var r = confirm("确定要清零？");
+            if (r == true) {
+                counter = 0;
+                document.getElementById("counter").innerHTML = counter;
+            }
+
+        }
+
+        //随机数
+        function getRandHook() {
+            var random = 0;
+            var bot = Math.min(document.getElementById("rLim1").value, document.getElementById("rLim2").value);
+            var top = Math.max(document.getElementById("rLim1").value, document.getElementById("rLim2").value);
+
+            random = getRand(bot, top);
+            alert("产生的随机数是：" + random);
+            document.getElementById("rand").innerHTML = random;
+        }//自由随机数钩子
+        function get6Dice() {
+            var DICE6 = getRand(1, 6);
+            alert(DICE6);
+            document.getElementById("dice6").innerHTML = "<img src='dice6-" + DICE6 + ".png'>";
+        }//6面骰子
+        function getCoin() {
+            var COIN = getRand(0, 1);
+            var sound = document.getElementById("coinSound");
+            if (COIN == 0) {
+                alert("++++TAIL++++");
+            }
+            else {
+                alert("====HEAD====");
+            };
+            sound.play();
+            document.getElementById("coin").innerHTML = "<img src='coink100-" + COIN + ".png'>";
+        }//硬币
+
+        //10个政治光谱
+        function randToPoli(r) {
+            var com = "";
+            switch (r) {
+                case 1:
+                    com = "极端反对(-2)";
+                    break;
+                case 2:
+                    com = "比较反对(-1)";
+                    break;
+                case 3:
+                    com = "无所谓(0)";
+                    break;
+                case 4:
+                    com = "比较支持(+1)";
+                    break;
+                case 5:
+                    com = "极端支持(+2)";
+                    break;
+            }
+            return "<td class='polD" + r + "'>" + com + "</td>";
+        }//将随机数转换成政治立场
+        function getPoli() {
+            var poli;
+
+            for (var i = 1; i <= 10; i++) {
+
+                var linId="poline"+i
+                document.getElementById(linId).innerHTML = "<td>选民" + i+"</td>";
+                for (var j = 1; j <= 4; j++) {
+                    poli = randToPoli(getRand(1, 5));
+                    document.getElementById(linId).innerHTML = document.getElementById(linId).innerHTML + poli;
+                }
+            }
+            var sound = document.getElementById("poliSound");
+            sound.play();
+        }//制作政治光谱表格
+
+
+        function getRand(rBot, rTop) {
+            var ra = 0;
+
+            if (rBot == rTop) {
+                ra = rTop
+            }
+            else {
+                ra = rBot + (rTop - rBot) * Math.random();
+                ra = Math.round(ra);
+            }
+
+            return ra;
+
+        }//基础随机数
+
+
+
+    </script>
+
+
+</body>
+</html >
