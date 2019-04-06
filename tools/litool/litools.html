@@ -35,7 +35,7 @@ permalink: /litools
             margin-bottom: 25px;
             text-align: center;
             position: relative;
-            left: 55%;
+            left: 52%;
         }
 
         .politic {
@@ -138,8 +138,8 @@ permalink: /litools
         <button onclick="counterPlus()" class="mybut butgreen">+</button>
         <button onclick="counterMinus()" class="mybut butred">-</button>
 
-        <audio id="cSoundP" style="display:none;"><source src="Hint.wav" type="audio/wav" /></audio>
-        <audio id="cSoundM" style="display:none;"><source src="Warning.wav" type="audio/wav" /></audio>
+        <audio id="cSoundP" style="display:none;"><source src="{{ site.url }}/tools/litool/Hint.wav" type="audio/wav" /></audio>
+        <audio id="cSoundM" style="display:none;"><source src="{{ site.url }}/tools/litool/Warning.wav" type="audio/wav" /></audio>
     </div>
 
     <div class="litool">
@@ -163,7 +163,7 @@ permalink: /litools
         <h3>硬币</h3>
         <p id="coin">？</p>
         <button onclick="getCoin()" class="mybut butgreen">GET</button>
-        <audio id="coinSound" style="display:none;"><source src="{{ site.url }}/tools/litools/ReceiveGold.wav" type="audio/wav"/></audio>
+        <audio id="coinSound" style="display:none;"><source src="{{ site.url }}/tools/litool/ReceiveGold.wav" type="audio/wav"/></audio>
     </div>
 
     <div class="litool">
@@ -185,7 +185,7 @@ permalink: /litools
 
         </table>
         <button onclick="getPoli()" class="mybut butblack">GET</button>
-        <audio id="poliSound" style="display:none;"><source src="Invi.wav" type="audio/wav" /></audio>
+        <audio id="poliSound" style="display:none;"><source src="{{ site.url }}/tools/litool/Invi.wav" type="audio/wav" /></audio>
     </div>
 
     <script>
@@ -228,7 +228,7 @@ permalink: /litools
         function get6Dice() {
             var DICE6 = getRand(1, 6);
             alert(DICE6);
-            document.getElementById("dice6").innerHTML = "<img src='dice6-" + DICE6 + ".png'>";
+            document.getElementById("dice6").innerHTML = "<img src='{{ site.url }}/tools/litool/dice6-" + DICE6 + ".png'>";
         }//6面骰子
         function getCoin() {
             var COIN = getRand(0, 1);
