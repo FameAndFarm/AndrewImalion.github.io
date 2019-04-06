@@ -1,3 +1,6 @@
-name: Hank Quinlan, Horrible Cop
+name: AndrewImalion
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+
+collections:
+- my_trends
